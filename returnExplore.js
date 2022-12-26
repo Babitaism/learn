@@ -11,7 +11,7 @@ function ashwini(){
     a = 1;
     c = 2
     let x,y = babita(a, c)
-    console.log(b)
+    console.log(a)
 }
 
 ashwini()

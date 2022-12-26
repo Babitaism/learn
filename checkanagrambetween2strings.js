@@ -8,7 +8,7 @@ object1[key] = 0
 object1[key] = object1[key] + 1
 }
 console.log (object1)
-string2='abcde'
+string2='abcdea'
 let object2 = {}
 for(k in string2){
 let key = string2[k]

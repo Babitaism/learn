@@ -54,6 +54,6 @@ function processor (array,number) {
 
 }
 
-finalResponse = processor ([1,2,3,4],40)
+finalResponse = processor ([1,2,3,4],4)
 console.log(finalResponse)
 

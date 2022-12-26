@@ -6,8 +6,6 @@ function isPrime(x) {
     }
     return true
 }
-
-
 let num1 = 20
 num2 = 30
 flag = 1

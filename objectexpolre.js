@@ -16,19 +16,22 @@
 //  console.log('ll')
 //   }
 
-
-str = 'abaccqffgghhjjk'
-let table = {}
-for(let i=0;i<str.length;i++){
-let key = str[i]
-if(table[key] == undefined){
-table[key] = 0
+//function to calculate string length
+function calculateStringLength() {
+    let object = {}
+    for (i in str) {
+        let key = str[i]
+        if (object[key] == undefined) {
+            object[key] = 0
+        }
+        object[key] = object[key] + 1
+    }
+    return object
 }
-table[key] = table[key] + 1
-}
-console.log(table)
 
-
+str = 'abaccqffgghhjjlllk'
+result = calculateStringLength(str)
+console.log(result)
 
 
 

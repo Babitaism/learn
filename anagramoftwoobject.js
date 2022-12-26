@@ -1,48 +1,48 @@
-str1 = 'ababc'
+str1 = 'ababjjkkggggaaaaacl'
+str2 = 'ababjjkkggggaaaaacl'
 let obj1 = {}
-for(let i=0;i<str1.length;i++){
-let key = str1[i]
-if(obj1[key] == undefined){
-obj1[key] = 0
+let flag = 1
+for (i in str1) {
+    let key = str1[i]
+    if (obj1[key] == undefined) {
+        obj1[key] = 0
+    }
+    obj1[key] = obj1[key] + 1
 }
-obj1[key] = obj1[key] + 1
-}
-console.log(obj1)
-str2 = 'aabbc'
+//console.log(obj1)
 let obj2 = {}
-for(let i=0;i<str2.length;i++){
-let key = str2[i]
-if(obj2[key] == undefined){
-obj2[key] = 0
+for (i in str2) {
+    let key = str2[i]
+    if (obj2[key] == undefined) {
+        obj2[key] = 0
+    }
+    obj2[key] = obj2[key] + 1
 }
-obj2[key] = obj2[key] + 1
+//console.log(obj2)
+let arr1 = Object.keys(obj1)
+let arr2 = Object.keys(obj2)
+length1 = arr1.length
+length2 = arr2.length
+//console.log(arr1, arr2)
+if (length1 != length2) {
+    flag = 1
 }
-console.log(obj2)
-
-//obj1.keys.lenght == obj2.keys.length
-keys1array = Object.keys(obj1)
-// [a,b]
-
-bothAreEqual = false
-
-for(k in keys1array){
-
-obj1EachKey = keys1array[k]
-
-if (obj2[obj1EachKey] == obj1[obj1EachKey]){
- bothAreEqual = true
+for (i in obj1){
+if(obj1[i]==obj2[i]){
+flag = 0
 }
-
 else{
-bothAreEqual = false
+    flag=1
+    break
 }
 }
-
-
-if(bothAreEqual){
+if(flag==0){
 console.log('anagram')
 }
-else {
-console.log('non anagram')
+else{
+    console.log('nonAnagram')   
 }
+
+
+
 

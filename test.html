@@ -1,0 +1,156 @@
+
+<style>
+               table, th, td {
+               border:1px solid black;
+               }
+               </style>
+
+<script>
+this.collectiveEdit = []
+this.collectiveRemove = []
+
+function editClick(name){
+ alert("Hi "+ name)
+}
+
+function deleteFunction(userId){
+alert("Are you sure you want to delete")
+
+fetch("/test", {
+    method: "POST",
+
+    // Adding body or contents to send
+    body: JSON.stringify({
+      userId: userId
+    }),
+
+    // Adding headers to the request
+
+    headers: {
+      "Content-type": "application/json; charset=UTF-8"
+    }
+
+  })
+
+  // Converting to JSON
+  .then(response => response.json()) //igonre this
+
+  // Displaying results to console
+  .then((json) => {
+      console.log(json)
+  });
+
+}
+
+function onSelect(userId){
+let checkbox = document.getElementById("name_"+userId)
+if(checkbox.checked){
+  this.collectiveEdit.push(userId)
+}
+else{
+  this.collectiveEdit = this.collectiveEdit.filter(function(e){
+     return e != userId
+    })
+}
+console.log(this.collectiveEdit)
+}
+
+
+function deleteAll(userId){
+alert("Are you sure you want to delete ")
+console.log(this.collectiveEdit)
+
+fetch("/deleteAllIds", {
+  method: "POST",
+
+  // Adding body or contents to send
+  body: JSON.stringify({
+    userId: this.collectiveEdit
+  }),
+
+  // Adding headers to the request
+
+  headers: {
+    "Content-type": "application/json; charset=UTF-8"
+  }
+
+})
+
+// Converting to JSON
+.then(response => response.json()) //igonre this
+
+// Displaying results to console
+.then((json) => {
+    console.log(json)
+});
+
+}
+
+
+</script>
+<table>
+    <tr>
+        <th>SNo</th>
+        <th>CheckBox</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>DOB</th>
+        <th>Action1</th>
+        <th>Action2</th>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td><label class="container">
+            <input type= "checkbox" id = "name_10"  onclick ="onSelect(10)" >
+            <div id="text1" style="display:none">Checkbox is CHECKED!</div>
+                <span class="checkmark"></span>
+        </label></td>
+        <td>Sai</td>
+        <td>Shirdi</td>
+        <td>1234567890</td>
+        <td>2022-12-07</td>
+        <td><button type="button" onclick="editClick('Sai')" >Edit</button></td>
+        <td><button type="button"  onclick="deleteFunction('10')">Delete</button></td>
+    </tr>,<tr>
+    <td>11</td>
+    <td><label class="container">
+        <input type= "checkbox" id = "name_11"  onclick ="onSelect(11)" >
+        <div id="text2" style="display:none">Checkbox is CHECKED!</div>
+            <span class="checkmark"></span>
+    </label></td>
+    <td>Shirdi</td>
+    <td>Pune</td>
+    <td>8587052270</td>
+    <td>2022-12-01</td>
+    <td><button type="button" onclick="editClick('Shirdi')" >Edit</button></td>
+    <td><button type="button"  onclick="deleteFunction('11')">Delete</button></td>
+</tr>,<tr>
+    <td>13</td>
+    <td><label class="container">
+        <input type= "checkbox" id = "name_13"  onclick ="onSelect(13)" >
+        <div id="text" style="display:none">Checkbox is CHECKED!</p>
+            <span class="checkmark"></span>
+    </label></td>
+    <td>Baby Saish</td>
+    <td>Kotdwara</td>
+    <td>8587052271</td>
+    <td>2022-12-02</td>
+    <td><button type="button" onclick="editClick('Baby Saish')" >Edit</button></td>
+    <td><button type="button"  onclick="deleteFunction('13')">Delete</button></td>
+</tr>,<tr>
+    <td>14</td>
+    <td><label class="container">
+        <input type= "checkbox" id = "name_14"  onclick ="onSelect(14)" >
+        <div id="text" style="display:none">Checkbox is CHECKED!</p>
+            <span class="checkmark"></span>
+    </label></td>
+    <td>Swati Rawat1</td>
+    <td>Kotdwara</td>
+    <td>8587052270</td>
+    <td>2022-12-12</td>
+    <td><button type="button" onclick="editClick('Swati Rawat1')" >Edit</button></td>
+    <td><button type="button"  onclick="deleteFunction('14')">Delete</button></td>
+</tr>
+</table>
+<button type="button" onclick ="deleteAll()"> Collective delete </button>

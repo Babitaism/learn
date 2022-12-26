@@ -6,10 +6,14 @@
 // a=a-b
 // console.log(a)
 
-let a = 1
-let b = 2
-let temp
-temp = a
-a=b
-b=temp
-console.log(a,b)
+// function Swap(a,b){
+// let temp
+// temp = a
+// a=b
+// b=temp
+// console.log(a,b)
+// }
+// final= Swap(1,2)
+// console.log(final)
+
+
