@@ -21,7 +21,7 @@ console.log(final)
 
 // function to calculate smallest age of input
 
-function checkMaxAge(input) {
+function checkMinAge(input) {
     values = Object.values(input)
     keys = Object.keys(input)
     let smallest = input[1].age
@@ -39,6 +39,6 @@ function checkMaxAge(input) {
    return array
 }
 
-final = checkMaxAge({ 1: { Name: 'Ashwini', age: 28 }, 2: { Name: 'Babitaa', age: 0.8 }, 3: { Name: 'Saish', age: 2 }, 4: { Name: 'Rishika', age: 10 } })
+final = checkMinAge({ 1: { Name: 'Ashwini', age: 28 }, 2: { Name: 'Babitaa', age: 0.8 }, 3: { Name: 'Saish', age: 2 }, 4: { Name: 'Rishika', age: 10 } })
 console.log(final)
 

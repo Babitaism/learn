@@ -19,5 +19,5 @@ let obj2 = {}
    return final
 }
 
-output = diff([1,2],[1,2,3,4])
+output = diff([1,2,3,4,5],[1,2,3])
 console.log(output)

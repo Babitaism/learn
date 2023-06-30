@@ -1,5 +1,5 @@
-str1 = 'ababjjkkggggaaaaacl'
-str2 = 'ababjjkkggggaaaaacl'
+str1 = "aabbbbcc"
+str2 = "aabbbbcc"
 let obj1 = {}
 let flag = 1
 for (i in str1) {

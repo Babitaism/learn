@@ -20,4 +20,4 @@ smallest = a[i]
 }
 console.log(smallest)
 }
-smallest ([12,2,3,4,10]))
+smallest ([12,2,3,4,10])

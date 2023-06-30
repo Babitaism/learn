@@ -1,6 +1,7 @@
 function checkMaxStringchar(list) {
     let values = Object.values(list)
     let keys = Object.keys(list)
+    
     let array = []
     let final
     for (i in list) {
@@ -11,6 +12,7 @@ function checkMaxStringchar(list) {
         }
         final = { count: count, name: string }
         array.push(final)
+        console.log(array)
     }
 
     let highest = array[0].count
@@ -31,5 +33,5 @@ function checkMaxStringchar(list) {
     }
 
 
-output = checkMaxStringchar({ 1: { Name: 'ashwini  kumarr', age: 48 }, 2: { Name: 'babita ttttyttt', age: 38 }, 3: { Name: 'saish', age: 2 }, 4: { Name: 'rishika', age: 10 } })
+output = checkMaxStringchar({ 1: { Name: 'ashwiniiikumarr', age: 48 }, 2: { Name: 'babita ttttyttt', age: 38 }, 3: { Name: 'saish', age: 2 }, 4: { Name: 'rishika', age: 10 } })
 console.log(output)

@@ -20,7 +20,7 @@ function intersection(arr1, arr2) {
     return final
 }
 
-console.log(intersection([1, 6, 7, 3, 4], [1,6, 3]))
+console.log(intersection([1, 6, 7, 3, 4], [1,6, 3,5]))
 
 // subtraction of 2 sets
 
